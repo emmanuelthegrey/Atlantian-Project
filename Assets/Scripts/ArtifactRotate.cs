@@ -4,39 +4,53 @@ using UnityEngine;
 
 public class ArtifactRotate : MonoBehaviour
 {
+    public float speed = .8f;
+    public float zoomSpeed = 1.5f;
+
+    int minFieldOfView = 14;
+    int maxFieldOfView = 25;
+
+    Vector3 lastMousePos;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Camera.main.fieldOfView = maxFieldOfView;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("Vertical") != 0)
         {
-            // transform.Rotate(Vector3.up, 1.0f);
-            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.up, 1.0f);
+            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.left, Input.GetAxis("Vertical") * speed);
         }
-        else if (Input.GetKey(KeyCode.D))
+
+        if (Input.GetAxis("Horizontal") != 0)
         {
-            //transform.Rotate(Vector3.down, 1.0f);
-            transform.RotateAround(new Vector3(0f, 0f, 0f), new Vector3(0f, 1f, 0f), 1.0f);
-
+            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.up, Input.GetAxis("Horizontal") * speed);
         }
-        else if (Input.GetKey(KeyCode.W))
+
+        if (Input.GetMouseButton(0))
         {
-            //transform.Rotate(Vector3.right, 1.0f);
-
-            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.right, 1.0f);
-
+            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.up, (lastMousePos.x - Input.mousePosition.x) * speed);
+            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.left, (lastMousePos.y - Input.mousePosition.y) * speed);
         }
-        else if (Input.GetKey(KeyCode.S))
+
+        if (Input.mouseScrollDelta.y != 0)
         {
-            //transform.Rotate(Vector3.left, 1.0f);
+            Camera.main.fieldOfView -= Input.mouseScrollDelta.y * zoomSpeed;
 
-            transform.RotateAround(new Vector3(0f, 0f, 0f), Vector3.left, 1.0f);
-
+            if (Camera.main.fieldOfView > maxFieldOfView)
+            {
+                Camera.main.fieldOfView = maxFieldOfView;
+            }
+            if (Camera.main.fieldOfView < minFieldOfView)
+            {
+                Camera.main.fieldOfView = minFieldOfView;
+            }
         }
+
+        lastMousePos = Input.mousePosition;
     }
 }
