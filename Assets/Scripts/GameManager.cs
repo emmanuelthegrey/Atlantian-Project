@@ -12,10 +12,14 @@ public class GameManager : MonoBehaviour
 
     int failureCount = 0;
 
+    public static int crystals = 0;
+    public static string ism = "sup";
+
     private void Awake ()
     {
         puzzleManager = new PuzzleManager();
         quadrantManager = new QuadrantManager();
+
     }
 
     void Start()

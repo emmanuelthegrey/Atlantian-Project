@@ -19,7 +19,6 @@ namespace Assets.Scripts
 
 		protected virtual void OnPuzzleFailure (object sender, EventArgs e)
 		{
-			print("i'm here");
 			Failure?.Invoke(sender, e);
 		}
 
@@ -29,6 +28,11 @@ namespace Assets.Scripts
 			winCondition.Add(greenButton);
 			winCondition.Add(purpleButton);
 			winCondition.Add(blueButton);
+
+			if (GameManager.crystals % 2 == 0)
+			{
+				winCondition.Reverse();
+			}
 		}
 
 		public void Update ()
