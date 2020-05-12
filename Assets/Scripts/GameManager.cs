@@ -13,13 +13,14 @@ public class GameManager : MonoBehaviour
     int failureCount = 0;
 
     public static int crystals = 0;
-    public static string ism = "sup";
+    public static Isms selectedIsm = Isms.AlwaysRaising;
 
     private void Awake ()
     {
         puzzleManager = new PuzzleManager();
         quadrantManager = new QuadrantManager();
 
+        selectedIsm = Isms.GetIsms[new System.Random().Next(0, 18)];
     }
 
     void Start()
