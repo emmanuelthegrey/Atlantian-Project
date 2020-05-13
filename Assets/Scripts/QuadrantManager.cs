@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class QuadrantManager
 {
-	IEnumerator<IPuzzle> puzzles;
-	IEnumerator<IArt> art;
+	List<GameObject> puzzles = new List<GameObject>();
+	List<IArt> art = new List<IArt>();
 
 	public QuadrantManager () 
 	{ 
@@ -14,7 +14,11 @@ public class QuadrantManager
 
 	public void Add (GameObject go)
 	{
+		puzzles.Add(go);
+	}
 
-
+	public void Distribute ()
+	{ 
+	
 	}
 }
