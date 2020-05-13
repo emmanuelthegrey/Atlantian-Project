@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         puzzleManager = new PuzzleManager();
         quadrantManager = new QuadrantManager();
 
-        selectedIsm = Isms.GetIsms[new System.Random().Next(0, 18)];
+        selectedIsm = Isms.GetIsms[new System.Random().Next(0, Isms.GetIsms.Count-1)];
     }
 
     void Start()
@@ -31,8 +31,11 @@ public class GameManager : MonoBehaviour
 
             puzzleManager.Add(puzzleComponent);
             puzzleComponent.Failure += OnPuzzleFailure;
+
+            quadrantManager.Add(p);
         });
-        puzzlePrefabs.ForEach(p => quadrantManager.Add(p));
+
+        quadrantManager.Distribute();
     }
 
     // Update is called once per frame
