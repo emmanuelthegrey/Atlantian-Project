@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     PuzzleManager puzzleManager;
 
     public List<GameObject> puzzlePrefabs;
+    public List<GameObject> anchorPoints;
+
 
     int failureCount = 0;
 
@@ -18,7 +20,9 @@ public class GameManager : MonoBehaviour
     private void Awake ()
     {
         puzzleManager = new PuzzleManager();
-        quadrantManager = new QuadrantManager();
+        print("# of an points " + anchorPoints.Count);
+        print("# of an puzzle " + puzzlePrefabs.Count);
+        quadrantManager = new QuadrantManager(anchorPoints);
 
         selectedIsm = Isms.GetIsms[new System.Random().Next(0, Isms.GetIsms.Count-1)];
     }
@@ -32,10 +36,14 @@ public class GameManager : MonoBehaviour
             puzzleManager.Add(puzzleComponent);
             puzzleComponent.Failure += OnPuzzleFailure;
 
-            quadrantManager.Add(p);
+            quadrantManager.Add(Instantiate(p));
+
         });
 
+
         quadrantManager.Distribute();
+
+
     }
 
     // Update is called once per frame
