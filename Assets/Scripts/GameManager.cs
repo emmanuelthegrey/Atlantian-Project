@@ -14,15 +14,16 @@ public class GameManager : MonoBehaviour
 
     int failureCount = 0;
 
-    public static int crystals = 0;
+    public static int crystals = 1;
     public static Isms selectedIsm = Isms.AlwaysRaising;
 
     private void Awake ()
     {
         puzzleManager = new PuzzleManager();
-       // print("# of an points " + anchorPoints.Count);
+        // print("# of an points " + anchorPoints.Count);
         //print("# of an puzzle " + puzzlePrefabs.Count);
-        quadrantManager = new QuadrantManager(anchorPoints);
+        quadrantManager = (QuadrantManager)ScriptableObject.CreateInstance("QuadrantManager");
+        quadrantManager.init(anchorPoints);
 
         selectedIsm = Isms.GetIsms[new System.Random().Next(0, Isms.GetIsms.Count-1)];
     }

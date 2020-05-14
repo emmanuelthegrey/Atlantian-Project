@@ -434,10 +434,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b91c7abd23cd0246b683985a8d42b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redButton: {fileID: 957001260132541233}
-  greenButton: {fileID: 2993623796589456431}
-  blueButton: {fileID: 5808251583726161256}
-  purpleButton: {fileID: 5756846680557696831}
+  waterButton: {fileID: 5808251583726161256}
+  windButton: {fileID: 6252306945241168870}
+  skullButton: {fileID: 954858287834786604}
+  moonButton: {fileID: 954938446957918880}
+  eyeButton: {fileID: 957001260132541233}
+  fireButton: {fileID: 5291883088424805495}
+  treeButton: {fileID: 2993623796589456431}
+  heartButton: {fileID: 5756846680557696831}
+  sunButton: {fileID: 4674127413599128686}
 --- !u!1 &2635786740231009936
 GameObject:
   m_ObjectHideFlags: 0

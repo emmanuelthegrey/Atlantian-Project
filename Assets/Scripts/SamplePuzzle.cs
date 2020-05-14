@@ -9,10 +9,15 @@ namespace Assets.Scripts
 		public bool IsSolved { get; set; } = false;
 		public event EventHandler Failure;
 
-		public PuzzleButton redButton;
-		public PuzzleButton greenButton;
-		public PuzzleButton blueButton;
-		public PuzzleButton purpleButton;
+		public PuzzleButton waterButton;
+		public PuzzleButton windButton;
+		public PuzzleButton skullButton;
+		public PuzzleButton moonButton;
+		public PuzzleButton eyeButton;
+		public PuzzleButton fireButton;
+		public PuzzleButton treeButton;
+		public PuzzleButton heartButton;
+		public PuzzleButton sunButton;
 
 		List<PuzzleButton> winCondition = new List<PuzzleButton>();
 		int selectionIndex = 0;
@@ -24,14 +29,26 @@ namespace Assets.Scripts
 
 		public void Start ()
 		{
-			winCondition.Add(redButton);
-			winCondition.Add(greenButton);
-			winCondition.Add(purpleButton);
-			winCondition.Add(blueButton);
-
-			if (GameManager.crystals % 2 == 0)
+			if (GameManager.crystals == 1)
 			{
-				winCondition.Reverse();
+				winCondition.Add(waterButton);
+				winCondition.Add(windButton);
+				winCondition.Add(skullButton);
+				winCondition.Add(moonButton);
+			}
+			else if (GameManager.crystals == 2)
+			{
+				winCondition.Add(eyeButton);
+				winCondition.Add(fireButton);
+				winCondition.Add(skullButton);
+				winCondition.Add(treeButton);
+			}
+			else if (GameManager.crystals == 3)
+			{
+				winCondition.Add(skullButton);
+				winCondition.Add(windButton);
+				winCondition.Add(waterButton);
+				winCondition.Add(fireButton);
 			}
 		}
 
