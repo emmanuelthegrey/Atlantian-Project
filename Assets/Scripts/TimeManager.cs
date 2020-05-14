@@ -24,6 +24,5 @@ public class TimeManager : MonoBehaviour
         var minutes = (int)(seconds / 60);
         Timer.text = $"{minutes}:{Mathf.FloorToInt(seconds - minutes * 60)}";
 
-
     }
 }
