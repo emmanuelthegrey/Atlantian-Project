@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4700730853478367412}
   - component: {fileID: 3316074801396273774}
   - component: {fileID: 5370688459585582327}
+  - component: {fileID: 5808251583726161256}
   m_Layer: 0
   m_Name: blueButton
   m_TagString: Untagged
@@ -93,6 +94,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5808251583726161256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412231344903215743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d2b8318a22b224b97635e99e520ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1952885972022093315
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b91c7abd23cd0246b683985a8d42b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redButton: {fileID: 6509127398349550774}
-  greenButton: {fileID: 0}
-  blueButton: {fileID: 0}
-  purpleButton: {fileID: 0}
+  redButton: {fileID: 957001260132541233}
+  greenButton: {fileID: 2993623796589456431}
+  blueButton: {fileID: 5808251583726161256}
+  purpleButton: {fileID: 5756846680557696831}
 --- !u!1 &2635786740231009936
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +233,7 @@ GameObject:
   - component: {fileID: 6459336490325983}
   - component: {fileID: 5087047790989010348}
   - component: {fileID: 5647869175284528747}
+  - component: {fileID: 5756846680557696831}
   m_Layer: 0
   m_Name: purpleButton
   m_TagString: Untagged
@@ -267,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb31eb93a8671c74b86324402ad7986a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -301,6 +315,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5756846680557696831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635786740231009936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d2b8318a22b224b97635e99e520ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6509127398349550774
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +339,7 @@ GameObject:
   - component: {fileID: 6984362189938896455}
   - component: {fileID: 990852141829903437}
   - component: {fileID: 8741931369757214008}
+  - component: {fileID: 957001260132541233}
   m_Layer: 0
   m_Name: redButton
   m_TagString: Untagged
@@ -394,6 +421,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &957001260132541233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509127398349550774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d2b8318a22b224b97635e99e520ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8784950827674162834
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +445,7 @@ GameObject:
   - component: {fileID: 6547771578524530688}
   - component: {fileID: 8910720616002009598}
   - component: {fileID: 6460016070321209135}
+  - component: {fileID: 2993623796589456431}
   m_Layer: 0
   m_Name: greenButton
   m_TagString: Untagged
@@ -487,3 +527,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2993623796589456431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784950827674162834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d2b8318a22b224b97635e99e520ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
