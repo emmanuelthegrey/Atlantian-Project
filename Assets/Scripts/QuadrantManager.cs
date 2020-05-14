@@ -35,7 +35,7 @@ public class QuadrantManager: ScriptableObject
 		{
 			for (int j = 0; j < quadrants.Count; j++)
 			{
-				var go = Instantiate(new GameObject());
+				var go = new GameObject();
 				go.transform.SetParent(anchorPoints[i].transform, false);
 				go.transform.localPosition = quadrants[j];
 				go.transform.localScale = new Vector3(.50f, .50f, .50f);
