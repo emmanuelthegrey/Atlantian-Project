@@ -14,6 +14,8 @@ namespace Assets.Scripts
 		public PuzzleSwitch blueSwitch;
 		public PuzzleSwitch purpleSwitch;
 
+		private Animator animator;
+
 		List<PuzzleSwitch> winCondition = new List<PuzzleSwitch>();
 		int selectionIndex = 0;
 
@@ -24,6 +26,8 @@ namespace Assets.Scripts
 
 		public void Start ()
 		{
+			animator = GetComponent<Animator>();
+
 			winCondition.Add(redSwitch);
 			winCondition.Add(greenSwitch);
 			winCondition.Add(purpleSwitch);
@@ -47,6 +51,8 @@ namespace Assets.Scripts
 
 					if (hitObject.IsChildOf(transform) && hitObject.GetComponent<PuzzleSwitch>() != null)
 					{
+						animator.SetTrigger("TriggerSwitchOff");
+
 						if (selectionIndex < winCondition.Count && winCondition[selectionIndex].transform == hitObject)
 						{
 							print("correct!");
