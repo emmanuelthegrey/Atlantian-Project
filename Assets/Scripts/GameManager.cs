@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     private void Awake ()
     {
         puzzleManager = new PuzzleManager();
-        print("# of an points " + anchorPoints.Count);
-        print("# of an puzzle " + puzzlePrefabs.Count);
+       // print("# of an points " + anchorPoints.Count);
+        //print("# of an puzzle " + puzzlePrefabs.Count);
         quadrantManager = new QuadrantManager(anchorPoints);
 
         selectedIsm = Isms.GetIsms[new System.Random().Next(0, Isms.GetIsms.Count-1)];
@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviour
     {
         puzzlePrefabs.ForEach(p =>
         {
-            var puzzleComponent = p.GetComponent<IPuzzle>();
+            var puzzle = Instantiate(p);
 
-            puzzleManager.Add(puzzleComponent);
-            puzzleComponent.Failure += OnPuzzleFailure;
+            puzzleManager.Add(puzzle.GetComponent<IPuzzle>());
+            puzzle.GetComponent<IPuzzle>().Failure += OnPuzzleFailure;
 
-            quadrantManager.Add(Instantiate(p));
+            quadrantManager.Add(puzzle);
 
         });
 
