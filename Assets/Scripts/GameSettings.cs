@@ -12,8 +12,8 @@ namespace Assets.Scripts
 		public static int NUM_PUZZLES_MED = 5;
 		public static int NUM_PUZZLES_HARD = 9;
 
-		public static int GAME_TIME_EASY = 20;
-		public static int GAME_TIME_MED = 15;
-		public static int GAME_TIME_HARD = 10;
+		public static int GAME_TIME_SECONDS_EASY = 1200;
+		public static int GAME_TIME_SECONDS_MED = 900;
+		public static int GAME_TIME_SECONDS_HARD = 600;
 	}
 }
