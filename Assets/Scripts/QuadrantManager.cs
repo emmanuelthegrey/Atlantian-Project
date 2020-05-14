@@ -36,7 +36,6 @@ public class QuadrantManager
 
 	public void Distribute()
 	{
-		Debug.Log($"# p a a {puzzlesAndArt.Count}");
 		puzzlesAndArt.Shuffle();
 
 		Queue<GameObject> gameObjects = new Queue<GameObject>(puzzlesAndArt);
