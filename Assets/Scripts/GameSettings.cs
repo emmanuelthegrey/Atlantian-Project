@@ -8,12 +8,14 @@ namespace Assets.Scripts
 {
 	public static class GameSettings
 	{
-		public static int NUM_PUZZLES_EASY = 1;
-		public static int NUM_PUZZLES_MED = 5;
-		public static int NUM_PUZZLES_HARD = 9;
+		public const int FAILURES = 3;
 
-		public static int GAME_TIME_SECONDS_EASY = 1200;
-		public static int GAME_TIME_SECONDS_MED = 900;
-		public static int GAME_TIME_SECONDS_HARD = 600;
+		public const int NUM_PUZZLES_EASY = 1;
+		public const int NUM_PUZZLES_MED = 5;
+		public const int NUM_PUZZLES_HARD = 9;
+
+		public const int GAME_TIME_SECONDS_EASY = 1200;
+		public const int GAME_TIME_SECONDS_MED = 900;
+		public const int GAME_TIME_SECONDS_HARD = 600;
 	}
 }

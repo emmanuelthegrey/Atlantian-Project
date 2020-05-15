@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> puzzlePrefabs;
     public List<GameObject> anchorPoints;
-
+    public TextMeshProUGUI strikes;
+    public GameObject gameOver;
 
     int failureCount = 0;
 
@@ -62,9 +64,11 @@ public class GameManager : MonoBehaviour
         print("failure logged");
         failureCount++;
 
-        if(failureCount >= 3)
+        strikes.text += "X";
+
+        if(failureCount >= GameSettings.FAILURES)
         {
-            print("game over!");
+            gameOver.SetActive(true);
         }
     }
 }
