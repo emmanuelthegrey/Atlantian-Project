@@ -17,5 +17,7 @@ namespace Assets.Scripts
 		public const int GAME_TIME_SECONDS_EASY = 1200;
 		public const int GAME_TIME_SECONDS_MED = 900;
 		public const int GAME_TIME_SECONDS_HARD = 600;
+
+		public static int CRYSTALS = new Random().Next(1, 4);
 	}
 }
