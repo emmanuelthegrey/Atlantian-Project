@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
     PuzzleManager puzzleManager;
 
     public List<GameObject> puzzlePrefabs;
+    public List<GameObject> artPrefabs;
     public List<GameObject> anchorPoints;
     public TextMeshProUGUI strikes;
     public GameObject gameOver;
+    public GameObject win;
 
     int failureCount = 0;
 
-    public static int crystals = 1;
     public static Isms selectedIsm = Isms.AlwaysRaising;
 
     private void Awake ()
@@ -43,10 +44,12 @@ public class GameManager : MonoBehaviour
 
         });
 
+        artPrefabs.ForEach(a =>
+        {
+            quadrantManager.Add(Instantiate(a));
+        });
 
         quadrantManager.Distribute();
-
-
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (puzzleManager.AreAllSolved())
         {
-            print("you win!");
+            win.SetActive(true);
         }
     }
 

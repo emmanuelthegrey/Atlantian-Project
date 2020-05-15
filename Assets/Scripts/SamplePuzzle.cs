@@ -29,21 +29,21 @@ namespace Assets.Scripts
 
 		public void Start ()
 		{
-			if (GameManager.crystals == 1)
+			if (GameSettings.CRYSTALS == 1)
 			{
 				winCondition.Add(waterButton);
 				winCondition.Add(windButton);
 				winCondition.Add(skullButton);
 				winCondition.Add(moonButton);
 			}
-			else if (GameManager.crystals == 2)
+			else if (GameSettings.CRYSTALS == 2)
 			{
 				winCondition.Add(eyeButton);
 				winCondition.Add(fireButton);
 				winCondition.Add(skullButton);
 				winCondition.Add(treeButton);
 			}
-			else if (GameManager.crystals == 3)
+			else if (GameSettings.CRYSTALS == 3)
 			{
 				winCondition.Add(skullButton);
 				winCondition.Add(windButton);

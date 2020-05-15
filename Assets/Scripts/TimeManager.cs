@@ -22,7 +22,9 @@ public class TimeManager : MonoBehaviour
         seconds -= Time.deltaTime;
 
         var minutes = (int)(seconds / 60);
-        Timer.text = $"{minutes}:{Mathf.FloorToInt(seconds - minutes * 60)}";
+        var currentSeconds = Mathf.FloorToInt(seconds - minutes * 60);
+        var displaySeconds = currentSeconds <= 9 ? ("0" + currentSeconds) : currentSeconds.ToString();
+        Timer.text = $"{minutes}:{displaySeconds}";
 
     }
 }

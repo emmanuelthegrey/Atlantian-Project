@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnimateGameOver : MonoBehaviour
 {
-    float animTime = 2;
+    public float animTime = 2;
     float timer = 0;
     float initialScale = 1;
     float addScale = 0.1f;
